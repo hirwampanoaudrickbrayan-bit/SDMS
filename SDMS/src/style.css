@@ -1,0 +1,35 @@
+:root { --blue:#1e3a8a; --yellow:#facc15; --red:#dc2626; --orange:#ea580c; --green:#15803d; --bg:#f3f4f6 }
+* { box-sizing: border-box }
+body { margin:0; font-family: system-ui, sans-serif; background:var(--bg); color:#111 }
+.top { display:flex; align-items:center; gap:14px; background:var(--blue); color:#fff; padding:10px 20px; border-bottom:4px solid var(--yellow) }
+.top img { height:56px } .top h1 { margin:0; font-size:1.1rem } .top p { margin:2px 0 0; font-size:.85rem; opacity:.85 }
+main { max-width:900px; margin:0 auto; padding:16px }
+.stats { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px }
+.stats div { background:#fff; padding:10px 14px; border-radius:8px; border-left:4px solid var(--green) }
+.stats .warning { border-color:var(--orange) } .stats .critical { border-color:var(--red) }
+.filters { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; align-items:center }
+input, select { padding:8px; border:1px solid #ccc; border-radius:6px; font-size:1rem }
+.filters input[type=text], .filters input:not([type]) { flex:1; min-width:180px }
+table { width:100%; border-collapse:collapse; background:#fff; border-radius:8px; overflow:hidden }
+th, td { text-align:left; padding:8px 12px; border-bottom:1px solid #eee }
+th { background:#e5e7eb }
+.badge { font-weight:700; color:var(--green) }
+tr.warning .badge { color:var(--orange) } tr.critical { background:#fef2f2 } tr.critical .badge { color:var(--red) }
+button { padding:7px 12px; border:0; border-radius:6px; background:var(--blue); color:#fff; cursor:pointer; font-size:.9rem }
+button.danger { background:var(--red) } button.ghost { background:#e5e7eb; color:#111 } button:disabled { opacity:.5; cursor:not-allowed }
+.empty { color:#777; text-align:center }
+.overlay { position:fixed; inset:0; background:rgba(0,0,0,.5); display:flex; align-items:center; justify-content:center; padding:12px }
+.modal { background:#fff; border-radius:10px; padding:18px; width:100%; max-width:460px; max-height:92vh; overflow:auto }
+.modal h2 { margin:0 0 4px } .modal h2 small { font-size:.8rem; color:#555 } .modal h3 { margin:14px 0 6px }
+.modal label { display:block; margin:10px 0 0; font-size:.9rem } .modal label input, .modal label select { width:100%; margin-top:4px }
+.alert { background:#fef2f2; border:1px solid var(--red); color:var(--red); padding:8px; border-radius:6px }
+.actions { display:flex; gap:8px; margin-top:12px }
+.history { list-style:none; padding:0; margin:0 0 10px } .history li { display:flex; justify-content:space-between; gap:8px; padding:6px 0; border-bottom:1px solid #eee; font-size:.9rem }
+.history small { color:#777; white-space:nowrap }
+.tabs { display:flex; gap:6px; margin:10px 0 } .tabs button { background:#e5e7eb; color:#111 } .tabs button.on { background:var(--blue); color:#fff }
+.login { max-width:320px; margin:30px auto; display:flex; flex-direction:column; gap:10px; text-align:center } .login img { height:110px; margin:auto }
+.who { margin-left:auto; font-size:.85rem } .sms { display:inline-block; margin:6px 0; color:var(--blue) } main h3 { margin:18px 0 6px }
+.printonly { display:none }
+@media print { .noprint, .top button, .tabs, header .who { display:none !important } .printonly { display:block } body { background:#fff } }
+.scroll { overflow-x:auto } .neg { color:var(--red); font-weight:700 } .pos { color:var(--green); font-weight:700 }
+main:has(.scroll) { max-width:1100px }
